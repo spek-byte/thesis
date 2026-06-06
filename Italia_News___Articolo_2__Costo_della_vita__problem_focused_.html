@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Italia News – Costo della vita e lavoratori a basso reddito</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    a { text-decoration: none; }
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      background: #f5f5f0;
+      color: #1a1a1a;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .util-bar {
+      background: #1b1b1b;
+      color: #bbb;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11.5px;
+      padding: 5px 0;
+    }
+    .util-bar .inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .util-bar a { color: #ccc; margin-left: 14px; }
+    .util-bar a:hover { color: #fff; }
+    .masthead {
+      background: #fff;
+      border-bottom: 3px solid #c0392b;
+      padding: 14px 0 10px;
+    }
+    .masthead .inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .masthead-logo {
+      font-family: "Georgia", serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .masthead-logo span { color: #c0392b; }
+    .masthead-tagline {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .masthead-right {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #888;
+      text-align: right;
+    }
+    .main-nav { background: #c0392b; }
+    .main-nav .inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+    }
+    .main-nav a {
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 15px;
+      display: block;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .main-nav a:hover, .main-nav a.active { background: rgba(0,0,0,0.18); }
+    .breadcrumb {
+      background: #efefea;
+      border-bottom: 1px solid #ddd;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #888;
+      padding: 7px 0;
+    }
+    .breadcrumb .inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .breadcrumb a { color: #c0392b; }
+    .breadcrumb span { margin: 0 5px; color: #bbb; }
+    .page-wrap {
+      max-width: 1160px;
+      margin: 24px auto 48px;
+      padding: 0 20px;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .article-main {
+      flex: 1 1 700px;
+      min-width: 0;
+      background: #fff;
+      border: 1px solid #e0ddd8;
+      padding: 30px 34px 36px;
+    }
+    .section-tag {
+      display: inline-block;
+      background: #c0392b;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      margin-bottom: 14px;
+    }
+    .article-title {
+      font-family: "Georgia", serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.22;
+      color: #111;
+      margin-bottom: 12px;
+    }
+    .article-deck {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.5;
+      border-left: 3px solid #c0392b;
+      padding-left: 12px;
+      margin-bottom: 16px;
+    }
+    .article-meta {
+      font-family: Arial, sans-serif;
+      font-size: 12.5px;
+      color: #888;
+      border-top: 1px solid #e0ddd8;
+      border-bottom: 1px solid #e0ddd8;
+      padding: 8px 0;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .article-meta .byline { color: #333; font-weight: 600; }
+    .article-meta .dateline { color: #999; }
+    .article-body p {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: #222;
+      margin-bottom: 16px;
+    }
+    .article-body p.lead {
+      font-size: 17px;
+      font-weight: 400;
+      color: #111;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .sidebar {
+      flex: 0 0 270px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-box {
+      background: #fff;
+      border: 1px solid #e0ddd8;
+      padding: 16px 18px;
+    }
+    .sidebar-box-title {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #c0392b;
+      margin: -16px -18px 14px;
+      padding: 7px 14px;
+    }
+    .sidebar-list { list-style: none; }
+    .sidebar-list li {
+      padding: 9px 0;
+      border-bottom: 1px solid #eeece8;
+      font-size: 13.5px;
+      line-height: 1.4;
+    }
+    .sidebar-list li:last-child { border-bottom: none; }
+    .sidebar-list a { color: #1a1a1a; }
+    .sidebar-list a:hover { color: #c0392b; }
+    .sidebar-list .tag {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #c0392b;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .site-footer {
+      background: #1b1b1b;
+      color: #888;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      padding: 18px 0;
+      text-align: center;
+      border-top: 3px solid #c0392b;
+    }
+    .site-footer strong { color: #ccc; }
+    @media (max-width: 820px) {
+      .page-wrap { flex-direction: column; }
+      .sidebar { flex: none; width: 100%; }
+      .article-main { padding: 20px 16px 28px; }
+      .masthead-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="util-bar">
+  <div class="inner">
+    <span>Lunedì, 8 giugno 2026</span>
+    <div>
+      <a href="#">Accedi</a>
+      <a href="#">Abbonati</a>
+      <a href="#">Newsletter</a>
+      <a href="#">Edicola digitale</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="inner">
+    <div>
+      <div class="masthead-logo">Italia <span>News</span></div>
+      <div class="masthead-tagline">Il quotidiano dell'economia e del lavoro</div>
+    </div>
+    <div class="masthead-right">
+      Lunedì 8 giugno 2026<br>
+      <span style="font-size:11px;">Edizione nazionale</span>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="inner">
+    <a href="#" class="active">Home</a>
+    <a href="#">Italia</a>
+    <a href="#">Economia</a>
+    <a href="#">Lavoro</a>
+    <a href="#">Finanza</a>
+    <a href="#">Mondo</a>
+    <a href="#">Opinioni</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="inner">
+    <a href="#">Home</a><span>›</span>
+    <a href="#">Economia</a><span>›</span>
+    <a href="#">Lavoro</a><span>›</span>
+    Costo della vita e lavoratori a basso reddito
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <article class="article-main">
+
+    <div class="section-tag">Economia &amp; Lavoro</div>
+
+    <h1 class="article-title">
+      Costo della vita e lavoratori a basso reddito
+    </h1>
+
+    <p class="article-deck">
+      I prezzi di affitti, generi alimentari e trasporti continuano a salire mentre i salari restano fermi. Per molte famiglie italiane, arrivare alla fine del mese è diventata una sfida quotidiana senza soluzione in vista.
+    </p>
+
+    <div class="article-meta">
+      <span class="byline">di Redazione</span>
+      <span class="dateline">8 giugno 2026 &nbsp;|&nbsp; 09:30</span>
+    </div>
+
+    <div class="article-body">
+
+      <p class="lead">
+        Poiché i prezzi di affitti, generi alimentari, trasporti ed energia continuano a rimanere elevati, molti lavoratori in Italia affermano che il loro stipendio non è più sufficiente a coprire le normali spese mensili. Questa pressione è particolarmente evidente tra i giovani lavoratori, i dipendenti part-time e le famiglie che dispongono di una sola fonte di reddito stabile.
+      </p>
+
+      <p>
+        Secondo gli esperti del mercato del lavoro, i salari in diversi settori non hanno tenuto il passo con l'aumento del costo della vita. Per molte famiglie, anche piccole spese ricorrenti possono diventare difficili da sostenere. «Il problema non è soltanto la disoccupazione», ha dichiarato Emma Moretti, ricercatrice esperta di mercato del lavoro. «Molte persone che lavorano continuano comunque ad avere difficoltà ad arrivare alla fine del mese.»
+      </p>
+
+      <p>
+        I lavoratori a basso reddito sono tra i gruppi maggiormente esposti a questa pressione. In molti casi, il reddito mensile viene assorbito da affitto, bollette, trasporti, cibo e altre spese essenziali prima che le famiglie possano mettere da parte dei risparmi o pianificare spese più importanti.
+      </p>
+
+      <p>
+        Il problema è particolarmente difficile per chi ha redditi bassi o instabili, inclusi giovani lavoratori, dipendenti part-time e famiglie con figli a carico. Per questi gruppi, le spese impreviste possono diventare rapidamente difficili da gestire. Una visita medica, il materiale scolastico, i costi di trasporto o una bolletta più alta del solito possono costringere le persone a rimandare pagamenti, rinviare acquisti o ridurre le spese in altri ambiti.
+      </p>
+
+      <p>
+        La pressione non riguarda un solo tipo di spesa. Nelle grandi città, l'affitto assorbe spesso una quota importante del reddito mensile, mentre nei centri più piccoli anche i trasporti e l'accesso ai servizi possono essere costosi. Alcune famiglie riferiscono di ridurre il riscaldamento, fare maggiore affidamento sui parenti o evitare spese sanitarie non urgenti quando più costi ordinari si presentano nello stesso periodo.
+      </p>
+
+      <p>
+        Diverse persone descrivono il problema come un accumulo costante di piccole spese. Giulia Ferri, commessa di 27 anni, ha raccontato che il suo stipendio copre le spese essenziali, ma lascia poco margine per altro. «Non si tratta di una sola grande spesa», ha detto. «Sono i piccoli costi che arrivano ogni settimana e rendono tutto più stressante.»
+      </p>
+
+      <p>
+        Gli esperti affermano che la situazione riflette uno squilibrio più ampio tra salari e costi quotidiani. I sindacati sostengono che il problema richiede tutele salariali più forti, contratti più stabili e misure nazionali più ampie. Tuttavia, avvertono anche che, senza cambiamenti sostanziali, molte famiglie resteranno esposte alla stessa pressione economica mese dopo mese.
+      </p>
+
+      <p>
+        Per molte famiglie, il risultato è un persistente senso di insicurezza. Anche quando le persone hanno un lavoro, le spese ordinarie possono rimanere difficili da gestire. La pressione di arrivare alla fine del mese continua a influenzare la vita quotidiana, lasciando alcune persone con poco margine per risparmiare, pianificare in anticipo o affrontare costi imprevisti. Per chi ha contratti instabili o risparmi limitati, anche le spese di routine possono diventare difficili da assorbire.
+      </p>
+
+    </div>
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Più letti</div>
+      <ul class="sidebar-list">
+        <li>
+          <span class="tag">Lavoro</span>
+          <a href="#">Inflazione e salari: come cambiano i contratti nel 2026</a>
+        </li>
+        <li>
+          <span class="tag">Economia</span>
+          <a href="#">Caro-affitti, le misure allo studio nei grandi centri urbani</a>
+        </li>
+        <li>
+          <span class="tag">Società</span>
+          <a href="#">Giovani e redditi instabili: le nuove forme di sostegno locale</a>
+        </li>
+        <li>
+          <span class="tag">Finanza</span>
+          <a href="#">Famiglie italiane: i consumi calano per il terzo trimestre consecutivo</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="sidebar-box-title">Articoli correlati</div>
+      <ul class="sidebar-list">
+        <li>
+          <span class="tag">Welfare</span>
+          <a href="#">Bonus spesa: come funzionano i sussidi comunali nel 2026</a>
+        </li>
+        <li>
+          <span class="tag">Lavoro</span>
+          <a href="#">Part-time involontario: il fenomeno cresce tra i giovani under 35</a>
+        </li>
+        <li>
+          <span class="tag">Economia</span>
+          <a href="#">Potere d'acquisto, l'Italia perde terreno rispetto alla media UE</a>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+  <strong>Italia News</strong> &nbsp;·&nbsp; Il quotidiano dell'economia e del lavoro &nbsp;·&nbsp;
+  © 2026 Italia News S.r.l. Tutti i diritti riservati &nbsp;·&nbsp;
+  <a href="#" style="color:#aaa;">Privacy</a> &nbsp;·&nbsp;
+  <a href="#" style="color:#aaa;">Contatti</a>
+</footer>
+
+</body>
+</html>
